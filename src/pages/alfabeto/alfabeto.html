@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Alfabeto</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let letra of letras; let i = index" (click)="escolher_sinal(i)">
+      <ion-thumbnail item-left>
+        <img [src]="letra.img"/>
+      </ion-thumbnail>
+        <h2>Letra {{ letra.l }}</h2>
+    </ion-item>
+  </ion-list>
+  <!--<ion-list>
+    <ion-item *ngFor="let letra of letras">
+      <ion-thumbnail item-left>
+        <img [src]="letra.img"/>
+      </ion-thumbnail>
+        <h2>Letra {{ letra.l }}</h2>
+    </ion-item>
+  </ion-list>-->
+</ion-content>
